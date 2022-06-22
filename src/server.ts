@@ -60,6 +60,10 @@ import { stringify } from 'querystring';
     })
   });
 
+  // health check for ec2 loadbalancer
+  app.get("/", async (req : express.Request, res : express.Response) => {
+      return res.status(200).send({msg:"qua ok "});
+  });
 
   // Start the Server
   app.listen(port, () => {
